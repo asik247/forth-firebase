@@ -1,9 +1,12 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
 import { auth } from '../firebase/firebase.init';
+import { AuthContext } from '../../Context/AuthContext/AuthContext';
 
 const Registation = () => {
+    const userInfo = use(AuthContext);
+    console.log(userInfo);
     // handle submit;
     const hanldeSubmit = (e) => {
         e.preventDefault();

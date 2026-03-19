@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../../Context/AuthContext/AuthContext';
 
 const LogIn = () => {
+    const userInfo = use(AuthContext)
+    console.log(userInfo);
     return (
         <div>
             <div className="hero  min-h-screen">
