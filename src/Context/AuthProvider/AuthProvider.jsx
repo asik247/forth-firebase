@@ -19,6 +19,7 @@ onAuthStateChanged(auth,(currentUser)=>{
         console.log('else',currentUser);
     }
 })
+// useEffect user kore kobo;
 
 // SignIn user code here;
 
