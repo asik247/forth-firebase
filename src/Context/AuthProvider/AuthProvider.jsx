@@ -1,6 +1,6 @@
 import React, { Children, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthContext/AuthContext';
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../../Components/firebase/firebase.init';
 
 const AuthProvider = ({children}) => {
@@ -9,6 +9,15 @@ const [user,Setuser] = useState(null)
 // Create User code here;
 const createUser = (email,password) =>{
     return createUserWithEmailAndPassword(auth,email,password);
+}
+
+// SignIn user code here;
+const signInUser = (email,password)=>{
+    return signInWithEmailAndPassword(auth,email,password)
+}
+// SignOut user code here;
+const signOutUser = ()=>{
+    return signOut(auth)
 }
 
 // current User code here;
@@ -38,6 +47,8 @@ useEffect(()=>{
     const userInfo = {
         user,
         createUser,
+        signInUser,
+        signOutUser
     }
   
     return (
