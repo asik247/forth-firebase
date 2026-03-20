@@ -6,6 +6,7 @@ import LogIn from "../Components/LogIn/LogIn";
 import Orders from "../Components/Orders/Orders";
 import PrivateRoutes from "./PrivateRoutes";
 import Profile from "../Components/Profile/Profile";
+import DashBoard from "../Components/DashBoard/DashBoard";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         {
             path:'profile',
             element:<PrivateRoutes><Profile></Profile></PrivateRoutes>
+        }
+        ,{
+            path:'dashBoard',
+            element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>
         }
         ]
         
